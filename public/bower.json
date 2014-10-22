@@ -1,0 +1,12 @@
+{
+  "name": "Battelship",
+  "version": "0.0.1",
+  "homepage": "https://github.com/DmitryMakhnev/ok-battleship",
+  "authors": [
+    "Dmitry Makhnev <dmitry.ivshin@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "requirejs": "~2.1.15"
+  }
+}
