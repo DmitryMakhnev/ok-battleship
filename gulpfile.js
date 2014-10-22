@@ -6,6 +6,7 @@ gulp.task('default', function () {
     var sources = gulp.src(
         [
             './public/bower_components/requirejs/require.js',
+            //'./public/bower_components/socket.io-client/socket.io.js',
             './public/scripts/requireConfig.js',
             './public/scripts/**/*.js',
             './public/**/*.css'

@@ -20,7 +20,9 @@ require.config({
   paths: {
     User: 'app/modules/User',
     Map: 'app/modules/Map',
-    Ship: 'app/modules/Ship'
+    Ship: 'app/modules/Ship',
+    //,
+    socket: '../bower_components/socket.io-client/socket.io'
   },
 
   shim: {

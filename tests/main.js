@@ -13,9 +13,27 @@ require([
 });
 
 
-describe('test', function(){
-    it('q', function(){
-        expect(2).toEqual(2);
-    })
+
+require([
+    'socket'
+], function(socketIo){
+    describe('test socket', function () {
+        var socket = socketIo.connect('http://127.0.0.1');
+        var testString = 'Any string';
+
+        socket.on('message', function (data) {
+            it('get socket data', function () {
+                expect(data).toEqual(testString);
+            });
+        });
+        socket.emit('message', testString);
+    });
 });
 
+
+
+describe('tests complete', function(){
+    it('complete?', function(){
+        expect(true).toBe(true);
+    })
+});

@@ -57,6 +57,21 @@ app.use(function(err, req, res, next) {
 });
 
 // Listen
-app.listen(3001);
+//app.listen(3001);
+
+
+var server = require('http').createServer(app);
+
+server.listen(3001, function(){});
+
+var io = require('socket.io').listen(server);
+
+io.sockets.on('connection', function(socket){
+
+    socket.on('message', function(text, cb){
+        socket.emit('message', text);
+        cb('123');
+    });
+});
 
 module.exports = app;

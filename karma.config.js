@@ -20,6 +20,9 @@ module.exports = function(config) {
 
       //'./public/bower_components/requirejs/require.js',
       //'./public/scripts/requireConfig.js',
+      //'./public/bower_components/socket.io-client/lib/*.js',
+      //'./public/bower_components/socket.io-client/index.js',
+      //'./public/bower_components/socket.io-client/socket.io.js',
       './public/scripts/**/*.js',
 
       './tests/main.js'
