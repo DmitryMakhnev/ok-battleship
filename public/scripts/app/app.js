@@ -1,6 +1,6 @@
 require([
     'User', 'Map', 'Ship'
 ], function(User, Map, Ship){
-    console.log('app');
-    console.log(arguments)
+    //console.log('app');
+    //console.log(arguments)
 });
