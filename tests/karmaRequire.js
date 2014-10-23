@@ -22,7 +22,8 @@ require.config({
     Map: 'app/modules/Map',
     Ship: 'app/modules/Ship',
     //,
-    socket: '../bower_components/socket.io-client/socket.io'
+    //socket: '../bower_components/socket.io-client/socket.io'
+    'socket.io': '/socket.io/socket.io.js'
   },
 
   shim: {
