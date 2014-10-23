@@ -3,6 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var expressSession = require('express-session');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
@@ -22,9 +23,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(expressSession({
+    "secret": "bsh",
+    "name": "sid"
+}));
+
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', routes);
+
 //app.use('/users', users);
 
 // catch 404 and forward to error handler
@@ -58,21 +65,7 @@ app.use(function(err, req, res, next) {
     });
 });
 
-// Listen
-//app.listen(3001);
-
-
-//var server = require('http').createServer(app);
-
-
-
-//var io = require('socket.io').listen(server);
-
 io.sockets.on('connection', function(socket){
-
-    //socket.on('message', function(text, cb){
-    //    socket.emit('message', text);
-    //});
 
     socket.on('connectTest', function(data){
         socket.emit('connectTest', data);

@@ -17,11 +17,17 @@ describe('Require main modules', function(){
             done()
         });
     });
+    it('has socket', function(done){
+        require(['socket.io'], function(socketIo){
+            expect(socketIo).toEqual(jasmine.any(Object));
+            done()
+        });
+    });
 });
 
 
 describe('Soket', function(){
-    it('connect', function(done){
+    it('message', function(done){
         require([
             'socket.io'
         ], function(socketIo){
@@ -35,7 +41,6 @@ describe('Soket', function(){
             });
 
             socket.emit('connectTest', testString);
-
 
         });
     });
